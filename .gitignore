@@ -1,1 +1,4 @@
 venv
+sistema_de_turmas/__pycache__
+acesso/__pycache__
+acesso/migrations/__pycache__
