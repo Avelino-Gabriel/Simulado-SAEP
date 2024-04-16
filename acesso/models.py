@@ -1,15 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User 
 
-class Sexo(models.Model):
-    sexo = models.CharField(max_length=256)
 class Professor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.EmailField()
     cpf = models.CharField(max_length=11)
     rg = models.CharField(max_length=9)
     data_nascimento = models.DateField()
-    sexo = models.OneToOneField(Sexo, on_delete=models.DO_NOTHING)
+    sexo = models.CharField(max_length=256, choices=(('M', 'Masculino'), ('F', 'Feminino')))
 
     def __str__(self):
         return self.user.username

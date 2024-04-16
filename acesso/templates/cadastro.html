@@ -1,0 +1,14 @@
+{% extends 'background.html' %}
+{% block title_head %}
+    Login
+{% endblock title_head %}
+{% block content %}
+    <main>
+        <form action="" method="POST">
+            <input type="text" name="username" placeholder="Nome">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+{% endblock content %}
